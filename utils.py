@@ -85,11 +85,9 @@ def send_email(email_config, config, filename, contacts_folder, ignore_folder):
                 return  # Sair depois de tentativas esgotadas
 
     # Atualiza a data de envio se a recorrência estiver definida
-    if email_config["recurrence_day"].isnumeric():
+    if isinstance(email_config["recurrence_day"], int):
         logging.info(f'encontrada recurrência para dia {email_config["recurrence_day"]} do próximo mês')
         update_recurrence_date(email_config, filename)
     else:
         logging.info('sem recurrência, mudar para a pasta de ignorar')
-        print(filename)
-        print(Path(ignore_folder))
         shutil.move(str(filename), os.path.join(Path(ignore_folder), Path(filename).stem))
