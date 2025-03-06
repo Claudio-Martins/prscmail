@@ -1,0 +1,2 @@
+endereco1@exemplo.com
+endereco2@outroexemplo.com
