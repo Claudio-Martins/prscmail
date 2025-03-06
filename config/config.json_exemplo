@@ -1,0 +1,8 @@
+{
+    "smtp": {
+        "server": "mail.exemplo.pt",
+        "port": 587,
+        "email": "endereco@exemplo.pt",
+        "password": "cr3d3nciais"
+    }
+}
